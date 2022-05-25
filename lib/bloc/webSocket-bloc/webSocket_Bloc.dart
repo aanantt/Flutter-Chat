@@ -24,7 +24,6 @@ class WebSocketBloc extends Bloc<WebSocketEvent, WebSocketState> {
       await emit.onEach(
         client.stream,
         onData: (data) {
-          log("state in get messages state" + data.toString());
           final o = jsonDecode(data as String);
           log(o.toString());
           emit(ListenMessagesState(o, false));
@@ -36,7 +35,6 @@ class WebSocketBloc extends Bloc<WebSocketEvent, WebSocketState> {
       await emit.onEach(
         client.connectedStream,
         onData: (data) {
-          // log("LISTEN ------CONNECTED----- STATE");
           final o = jsonDecode(data as String);
           log(o.toString());
           emit(ConnectedState(o));

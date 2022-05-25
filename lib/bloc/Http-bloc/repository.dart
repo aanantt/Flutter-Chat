@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:notifications/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class DioRepository {
   static Dio dio = Dio();
   static String url = "http://192.168.43.86:8080";
@@ -42,7 +41,7 @@ class DioRepository {
     }
     return Future.error("error");
   }
-
+ 
   Future getUserChats() async {
     dio.options.headers["token"] = prefs.getString("token");
     List list = [];

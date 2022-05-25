@@ -96,7 +96,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
   }
 
   Timer? _debounce;
-  int _debouncetime = 100;
+  int _debouncetime = 300;
 
   TextEditingController controller = TextEditingController();
   TextEditingController updateController = TextEditingController();
@@ -211,7 +211,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
               constraints: BoxConstraints(
                   maxWidth: MediaQuery.of(context).size.width * 0.6),
               child: Text(
-                msg["message"].toString() + index.toString(),
+                msg["message"].toString(),
                 style: TextStyle(
                     fontSize: 18,
                     color: widget.userId != msg["from"]

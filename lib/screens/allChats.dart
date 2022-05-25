@@ -39,6 +39,7 @@ class _AllChatsState extends State<AllChats> {
                           profile: allChats[index]["profile"],
                           userId: allChats[index]["_id"],
                         ))).whenComplete(() {
+                      allChats.clear();
               BlocProvider.of<HttpBloc>(_context).add(GetAllUsers());
             });
           },
